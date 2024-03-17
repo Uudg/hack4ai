@@ -38,4 +38,16 @@ module.exports = async(fastify, opts) => {
             title: parsed.Title
         })
     });
+
+    fastify.post("/tip",async (req, res) => {
+        const {emotions} = req.body;
+        const model = 'opus';
+        const claude_response = await fastify.claude.ai(emotions, model)
+        // console.log(claude_response);
+        // const to_parse = claude_response.content[0].text;
+        // const parsed = JSON.parse(to_parse);
+        res.send({
+            tip: claude_response.content[0].text
+        })
+    })
 }

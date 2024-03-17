@@ -28,6 +28,7 @@ const Loader = () => {
             <div>
                 <div className="spinner"></div>
                 <div className="text">{currentMessage}...</div>
+                <div className="apo">Since it is prototype, may take a while :(</div>
             </div>
         </div>
     )

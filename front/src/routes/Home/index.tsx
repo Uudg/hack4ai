@@ -1,13 +1,14 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Document from "../../components/Document";
 
 const Home = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const index = location.state?.index;
     const documents = JSON.parse(localStorage.getItem('documents') || '[]');
 
     if (index === undefined || documents.length === 0) {
-        return <h1>No documents</h1>;
+        navigate('/new');
     }
 
     const document = documents[index];

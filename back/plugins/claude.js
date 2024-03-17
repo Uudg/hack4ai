@@ -16,8 +16,9 @@ const claude = async (propmt, model) => {
         max_tokens = 1024
     }
     if (model === 'opus') {
+        propmt = JSON.stringify(propmt)
         m = 'claude-3-opus-20240229'
-        system = 'Your task is to analyze users mood and mental condition based on provided data. Response like a friend not like a doctor, give tips ideas, jokes. Use emojies if appliable. Keep it short but effective'
+        system = 'You are given amount of each mood tracked during one month. Your task is to analyze users mood and mental condition based on provided data. Response like a friend not like a doctor, give tips ideas, jokes. Use emojies if appliable. Keep it short but effective'
         max_tokens = 3000
     }
 

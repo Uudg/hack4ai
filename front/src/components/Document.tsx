@@ -22,6 +22,8 @@ const Document = ({image: propImage, title: propTitle, body: propBody, index: pr
     const [loading, setLoading] = useState(false);
     const bodyRef = useRef<HTMLDivElement | null>(null);
 
+    const [isBodyEmpty, setIsBodyEmpty] = useState(!body);
+
     useEffect(() => {
         if (bodyRef.current) {
             const range = document.createRange();
@@ -33,6 +35,13 @@ const Document = ({image: propImage, title: propTitle, body: propBody, index: pr
             bodyRef.current.focus();
         }
     }, [body]);
+
+    const handleBodyKeyPress = () => {
+        if (isBodyEmpty) {
+            setBody('');
+            setIsBodyEmpty(false);
+        }
+    }
 
     const save_doc = async () => {
         setLoading(true);
@@ -88,6 +97,7 @@ const Document = ({image: propImage, title: propTitle, body: propBody, index: pr
 
     const handleBodyChange = (e: React.FormEvent<HTMLDivElement>) => {
         const newBody = e.currentTarget.innerHTML || '';
+        setIsBodyEmpty(!newBody);
         if (newBody !== body) {
             setBody(newBody);
         }
@@ -110,7 +120,8 @@ const Document = ({image: propImage, title: propTitle, body: propBody, index: pr
                 contentEditable
                 suppressContentEditableWarning
                 onInput={handleBodyChange}
-                dangerouslySetInnerHTML={{ __html: body }}
+                onKeyDown={handleBodyKeyPress}
+                dangerouslySetInnerHTML={{ __html: body || (isBodyEmpty ? '<span class="placeholder">Write a short story, let magic happen...</span>' : '') }}
             />
             <div className="row center">
                 <button className="submit" onClick={save_doc}>Save your Story</button>
