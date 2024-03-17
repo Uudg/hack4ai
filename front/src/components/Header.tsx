@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import click from '../assets/click.svg';
-import profile from '../assets/click.svg';
+import profile from '../assets/profile.svg';
 
 const Header = () => {
     const navigate = useNavigate();
