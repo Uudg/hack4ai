@@ -98,3 +98,43 @@ header {
     transition: .3s;
     font-weight: 300;
 }
+
+.navbar a {
+    text-decoration: none;
+    color: #1f1f1f;
+    padding: 20px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    background: rgba(0,0,0,0.2);
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar > * {
+    width: 100%;
+    /* justify-content: space-evenly; */
+}
+
+.week .day {
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.day.name {
+    opacity: .4;
+}
+
+.day.old {
+    opacity: .4;
+}
+
+.week {
+    border-bottom: 0.5px solid rgba(0,0,0,0.2);
+    height: 80px;
+}

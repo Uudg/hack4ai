@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import './other.css'
 
 interface Document {
@@ -15,6 +15,8 @@ const Navbar = () => {
         navigate('/home', { state: { index } });
     }
 
+    const openMoodboard = () => navigate('/mood');
+
     const handleNewClick = () => {
         navigate('/new');
     }
@@ -24,6 +26,7 @@ const Navbar = () => {
             <div className="logo">
                 emotory
             </div>
+            <button onClick={openMoodboard}>Moodboard</button>
             {documents.map((document: Document, index: number) => (
                 <button key={index} onClick={() => handleClick(index)}>
                     {document.title}

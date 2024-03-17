@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 
 const imgs = [
-    { name: 'Pixar', src: '1.jpg' },
+    { name: 'Pixar Cartoon', src: '1.jpg' },
     { name: 'Anime', src: '2.jpg' },
     { name: 'Old Cartoon', src: '3.jpg' },
     { name: 'Old Anime', src: '7.jpg' },
-    { name: 'Bright', src: '4.jpg' },
+    { name: 'Bright Colors', src: '4.jpg' },
     { name: 'Kawaii', src: '9.jpg' },
     { name: 'Drawn', src: '8.jpg' },
     { name: 'Modern Cartoon', src: '6.jpg' },
@@ -17,6 +17,13 @@ interface StylesProps {
 }
 
 const Styles = ({setPage, setSelectedImage}: StylesProps) => {
+
+    const handleClick = (el: string) => {
+        localStorage.setItem('style', el)
+        setPage(1);
+        setSelectedImage(el)
+    }
+
     return (
         <div className="styles">
             <div className="container column">
@@ -26,7 +33,7 @@ const Styles = ({setPage, setSelectedImage}: StylesProps) => {
                 <div className="imgs row">
                     {imgs.map((el, i) => {
                         return (
-                            <div className="img" key={i} onClick={() => {setPage(1); setSelectedImage(el.name);}}>
+                            <div className="img" key={i} onClick={() => handleClick(el.name)}>
                                 <div className="name">{el.name}</div>
                                 <img src={`./src/assets/${el.src}`} alt="" />
                             </div>

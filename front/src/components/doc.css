@@ -63,6 +63,7 @@
     resize: none;
     color: #1f1f1f;
     min-height: 2rem;
+    width: 80%;
 }
 
 .document button {
@@ -95,6 +96,12 @@
 
 .body .placeholder {
     color: #ccc;
+}
+
+hr {
+    z-index: 100;
+    opacity: .3;
+    width: 100%;
 }
 
 

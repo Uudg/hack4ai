@@ -6,7 +6,7 @@ interface PersonProps {
     setPersonData: Dispatch<SetStateAction<{name: string, age: string, gender: string}>>;
 }
 
-const Person = ({selectedImage, setPage, setPersonData}: PersonProps) => {
+const Person = ({setPage, setPersonData}: PersonProps) => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');

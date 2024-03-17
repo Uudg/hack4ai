@@ -2,12 +2,13 @@ import {createBrowserRouter} from 'react-router-dom'
 import Welcome from './routes/Welcome';
 import Home from './routes/Home';
 import App from './App';
-import Begin from './routes/Begin';
+import Begin from "./routes/Begin";
 import Document from './components/Document';
+import Moodboard from './routes/Moodboard';
 
 const router = createBrowserRouter([
     {
-        path: '/welcome',
+        path: '/',
         element: <Welcome/>,   
     },
     {
@@ -28,6 +29,13 @@ const router = createBrowserRouter([
                 <div className="view">
                     <Document image={null} body={null} title={null} index={null}/>
                 </div>                 
+            },
+            {
+                path: '/mood',
+                element: 
+                 <div className="view">
+                    <Moodboard/>    
+                </div>   
             }
         ]
     },
