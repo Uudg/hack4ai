@@ -1,3 +1,9 @@
+import happy from '../assets/happy.svg';
+import neutral from '../assets/neutral.svg';
+import sad from '../assets/sad.svg';
+import lovely from '../assets/lovely.svg';
+import angry from '../assets/angry.svg';
+
 const names = [
     'M',
     'T',
@@ -9,11 +15,11 @@ const names = [
 ]
 
 const emotions = [
-    'happy',
-    'neutral',
-    'sad',
-    'lovely',
-    'angry'
+    happy,
+    neutral,
+    sad,
+    lovely,
+    angry
 ]
 
 const days = [
@@ -74,7 +80,7 @@ const Moodboard = () => {
                             return (
                                 <div key={j} className={`day ${i === 0 && j < firstDayIndex ? 'old' : ''}`}>
                                     {day}
-                                    <img src={`./src/assets/${emotion}.svg`} alt={emotion} />
+                                    <img src={emotion} alt={emotion} />
                                 </div>
                             );
                         })}

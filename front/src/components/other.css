@@ -7,7 +7,8 @@
     background: rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 0 6px;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 header {

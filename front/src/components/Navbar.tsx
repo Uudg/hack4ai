@@ -33,7 +33,7 @@ const Navbar = () => {
     return (
         <div className="navbar column">
             <div className="mobile-nav-btn" onClick={handleNavToggle}>
-                <img src="./src/assets/menu.svg" alt="" />
+                <img src={"./src/assets/menu.svg"} alt="" />
             </div>
             <div className={`mobile-nav ${isActive ? 'active' : ''}`}>
                 <div className="bg" onClick={handleBgClick}></div>
