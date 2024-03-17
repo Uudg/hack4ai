@@ -66,7 +66,7 @@ const Welcome = () => {
                     {Array.from({ length: width }, (_, k) => {
                         // if (Math.random() < 0.25) return <div className="img"></div>;
                         const imageIndex = ((k + i * width) % images.length) + 1;
-                        const image = `./src/assets/${imageIndex}.jpg`;
+                        const image = images[imageIndex - 1];
                         return (
                             <div key={k} className="img">
                                 <img src={image} alt="" />
